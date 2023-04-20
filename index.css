@@ -1,9 +1,198 @@
+/* Initialisation */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
 @font-face {
     font-family: "IntegralCF";
-    src: url("./fonts/IntegralCF-Regular.otf") format("optentype");
+    src: 
+        local('IntegralCF'),
+        local('IntegralCF-Regular'),
+        url("./fonts/IntegralCF-Regular.otf");
 }
 
 @font-face {
     font-family: "MarkPro";
-    src: url("./fonts/MarkPro.otf") format("opentype");
+    src: 
+        local("MarkPro"),
+        local("MarkPro-Regular"),
+        url("./fonts/MarkPro.otf");
+}
+
+/* Title Page */
+
+.top-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: "IntegralCF", sans-serif;
+    font-size: 4.5rem;
+    height: 100vh;
+    color: #222;
+    background: #DDD;
+}
+
+.name {
+    margin: 0;
+    width: 100%;
+}
+
+.expertise {
+    margin: 0;
+    width: 100%;
+}
+
+.arrow {
+    margin: 0;
+    height: 15%;
+}
+
+/* Projects Page */
+
+.projects {
+    display: flex;
+    height: 100vh;
+    background: 222;
+}
+
+.projects-header {
+    left: 10px;
+    bottom: -100%;
+    font-family: "IntegralCF", sans-serif;
+    font-size: 7rem;
+    color: #DDD;
+    position: absolute;
+    -webkit-text-stroke: 2px #222;
+}
+
+.project-a {
+    width: calc(100%/3);
+}
+
+.project-a .card {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.project-b {
+    width: calc(100%/3);
+}
+
+.project-b .card {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.project-c {
+    width: calc(100%/3);
+}
+
+.project-c .card {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* Skills Page */
+
+.skill-page {
+    height: 100vh;
+    background: #222;
+}
+
+.skills-header {
+    position: absolute;
+    left: 10px;
+    bottom: -200%;
+    font-family: "IntegralCF", sans-serif;
+    font-size: 6rem;
+    color: #DDD;
+}
+
+.skills {
+    display: flex;
+    justify-content: space-around;
+    color: #222;
+}
+
+.skills .info {
+    margin-top: 5rem;
+    z-index: 2;
+    background: #DDD;
+    width: 25rem;
+    height: 30rem;
+    text-align: center;
+}
+
+.skills .info h1 {
+    font-family: "IntegralCF", sans-serif;
+    font-size: 3rem;
+}
+
+.skills .info ul {
+    display: flex;
+    list-style-type: none;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.skills .info li {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.soft-skills .info li {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.skills .info p {
+    font-family: "MarkPro", sans-serif;
+    font-size: 2rem;
+}
+
+/* Contact Me Page */
+
+.contact-page {
+    height: 100vh;
+    background: #DDD;
+}
+
+.contact-me {
+    position: absolute;
+    left: 10px;
+    bottom: -300%;
+    font-family: "IntegralCF", sans-serif;
+    font-size: 6rem;
+    color: #222;
+}
+
+.contact {
+    margin: auto;
+    position: absolute;
+    top: 310%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 60%;
+    height: 55%;
+    background: #222;
+    font-family: "IntegralCF", sans-serif;
+    color: #DDD;
+}
+
+.contact h2 {
+    font-size: 5rem;
+    line-height: 85%;
+}
+
+.contact p {
+    font-size: 4rem;
 }
