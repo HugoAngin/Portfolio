@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "IntegralCF";
+    src: url("./fonts/IntegralCF-Regular.otf") format("optentype");
+}
+
+@font-face {
+    font-family: "MarkPro";
+    src: url("./fonts/MarkPro.otf") format("opentype");
+}
