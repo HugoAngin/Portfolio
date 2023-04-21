@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Hugo Angin</title>
     <script
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"
     integrity="sha512-cdV6j5t5o24hkSciVrb8Ki6FveC2SgwGfLE31+ZQRHAeSRxYhAQskLkq3dLm8ZcWe1N3vBOEYmmbhzf7NTtFFQ=="
@@ -17,7 +17,7 @@
 <body>
     <div class="container">
         <!-- Top Page -->
-        <section class="top-page">
+        <section id="top-page">
             <div class="top-text">
                 <h1 class="name">Hugo Angin</h1>
                 <h1 class="expertise">Web Developer</h1>
@@ -26,23 +26,24 @@
         </section>
         <!-- Projects Page-->
         <section id="projects">
+            <p class="back-text">Click To Go Back</p>
             <h1 class="projects-header">Projects</h1>
             <div class="project-a">
-                <img src="./images/bigcomputer.jpg" alt="computer" class="card">
+                <img src="./images/parallax.png" alt="project1" class="card">
                 <div class="learn-card">
                     <div class="shadow"></div>
                     <p>LEARN MORE</p>
                 </div>
             </div>
             <div class="project-b">
-                <img src="./images/code.jpg" alt="code" class="card">
+                <img src="./images/mushroom.png" alt="code" class="card">
                 <div class="learn-card">
                     <div class="shadow"></div>
                     <p>LEARN MORE</p>
                 </div>
             </div>
             <div class="project-c">
-                <img src="./images/smallcomputer.jpg" alt="computer" class="card">
+                <img src="./images/scroll.png" alt="computer" class="card">
                 <div class="learn-card">
                     <div class="shadow"></div>
                     <p>LEARN MORE</p>
@@ -121,6 +122,7 @@
                 <div class="box-shadow1"></div>
                 <div class="line-deco"></div>
             </div>
+            <a href='#top-page' id="up-arrow"> <img src="./images/scroll.svg" alt="arrow"> </a>
         </section>
     </div>
     <script src="./script.js"></script>
