@@ -21,17 +21,31 @@
         url("./fonts/MarkPro.otf");
 }
 
+body{ 
+    overscroll-behavior: none;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+
+
+
 /* Title Page */
 
 .top-page {
+    height: 100vh;
+    background: #DDD;
+}
+
+.top-text {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     font-family: "IntegralCF", sans-serif;
-    font-size: 4.5rem;
-    height: 100vh;
+    font-size: 6vw;
     color: #222;
-    background: #DDD;
+    height: 85vh;
 }
 
 .name {
@@ -44,31 +58,93 @@
     width: 100%;
 }
 
-.arrow {
+#arrow { 
+    margin-right: auto;
+    margin-left: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 10px;
+    animation: 2s infinite scroll;
+}
+
+@keyframes scroll {
+    0% {
+      transform: translateX(-50%) translate(0, 0);
+    }
+    20% {
+      transform: translateX(-50%) translateY(10px);
+    }
+    70% {
+      transform: translateX(-50%) translate(0, 0);
+    }
+  }
+
+#arrow img{
     margin: 0;
-    height: 15%;
+    height: 10rem;
+    object-fit: cover;
 }
 
 /* Projects Page */
 
-.projects {
-    display: flex;
+#projects {
     height: 100vh;
-    background: 222;
+    background: #222;
 }
 
 .projects-header {
+    z-index: 4;
     left: 10px;
     bottom: -100%;
     font-family: "IntegralCF", sans-serif;
-    font-size: 7rem;
+    font-size: 6vw;
     color: #DDD;
     position: absolute;
     -webkit-text-stroke: 2px #222;
+    transition: translate 300ms ease-out;
+}
+
+.learn-card {
+    transition: opacity 300ms ease-out;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    opacity: 0;
+}
+
+.learn-card .shadow {
+    position: absolute;
+    background: black;
+    width: 100%;
+    height: 100vh;
+    opacity: 50%;
+}
+
+.learn-card p {
+    color: #222;
+    background: #DDD;
+    padding: 2.4vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    position: absolute;
+    font-family: "IntegralCF", sans-serif;
+    font-size: 2.4vw;
+    width: 50%;
+    opacity: 100%;
 }
 
 .project-a {
+    cursor: grab;
+    position: absolute;
     width: calc(100%/3);
+    transition: all 200ms ease-out;
 }
 
 .project-a .card {
@@ -77,8 +153,16 @@
     object-fit: cover;
 }
 
+.project-a:hover:not(.fullscr) .learn-card, .project-b:hover:not(.fullscr) .learn-card, .project-c:hover:not(.fullscr) .learn-card{
+    opacity: 1;
+}
+
 .project-b {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     width: calc(100%/3);
+    transition: all 300ms ease-out;
 }
 
 .project-b .card {
@@ -88,13 +172,41 @@
 }
 
 .project-c {
+    position: absolute;
+    right: 0;
     width: calc(100%/3);
+    transition: all 300ms ease-out;
 }
 
 .project-c .card {
     width: 100%;
     height: 100vh;
     object-fit: cover;
+}
+
+.fullscr {
+    width: 100%;
+    z-index: 3;
+}
+
+.right{
+    transform: translateX(34%);
+    right: 0;
+}
+
+.rightright{
+    transform: translateX(68%);
+    right: 0;
+}
+
+.left{
+    transform: translateX(-34%);
+    left: 0;
+}
+
+.leftleft{
+    transform: translateX(-68%);
+    left: 0;
 }
 
 /* Skills Page */
@@ -109,28 +221,29 @@
     left: 10px;
     bottom: -200%;
     font-family: "IntegralCF", sans-serif;
-    font-size: 6rem;
+    font-size: 6vw;
     color: #DDD;
 }
 
 .skills {
+    padding: 4vw;
     display: flex;
     justify-content: space-around;
     color: #222;
 }
 
 .skills .info {
-    margin-top: 5rem;
+    position: absolute;
     z-index: 2;
     background: #DDD;
-    width: 25rem;
-    height: 30rem;
+    width: 25vw;
+    height: 57vh;
     text-align: center;
 }
 
 .skills .info h1 {
     font-family: "IntegralCF", sans-serif;
-    font-size: 3rem;
+    font-size: 3vw;
 }
 
 .skills .info ul {
@@ -141,18 +254,63 @@
 }
 
 .skills .info li {
-    margin-top: 3rem;
-    margin-bottom: 3rem;
+    margin-top: 3vw;
+    margin-bottom: 3vw;
 }
 
 .soft-skills .info li {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
 }
 
 .skills .info p {
     font-family: "MarkPro", sans-serif;
-    font-size: 2rem;
+    font-size: 2vw;
+}
+
+.box-shadow {
+    transform: translate(1rem, 1rem);
+    z-index: 1;
+    width: 25vw;
+    height: 57vh;
+    background: black;
+    transition: transform 250ms ease-out;
+}
+
+.soft-skills {
+    transition: transform 250ms ease-out;
+}
+
+.soft-skills:hover {
+    transform: translate(1rem, 1rem);
+}
+
+.soft-skills:hover .box-shadow {
+    transform: translate(-1rem, -1rem);
+}
+
+.hard-skills {
+    transition: transform 250ms ease-out;
+}
+
+.hard-skills:hover {
+    transform: translate(1rem, 1rem);
+}
+
+.hard-skills:hover .box-shadow {
+    transform: translate(-1rem, -1rem);
+}
+
+.interests {
+    transition: transform 250ms ease-out;
+}
+
+.interests:hover {
+    transform: translate(1rem, 1rem);
+}
+
+.interests:hover .box-shadow {
+    transform: translate(-1rem, -1rem);
 }
 
 /* Contact Me Page */
@@ -167,11 +325,12 @@
     left: 10px;
     bottom: -300%;
     font-family: "IntegralCF", sans-serif;
-    font-size: 6rem;
+    font-size: 6vw;
     color: #222;
 }
 
 .contact {
+    z-index: 2;
     margin: auto;
     position: absolute;
     top: 310%;
@@ -195,4 +354,43 @@
 
 .contact p {
     font-size: 4rem;
+}
+
+.box-shadow1 {
+    margin: auto;
+    padding: 2rem;
+    position: absolute;
+    top: 310%;
+    left: 50%;
+    transform: translateX(-50%) translate(1rem, 1rem);
+    width: 60%;
+    height: 55%;
+    background: white;
+    transition: transform 300ms ease-out;
+}
+.line-deco {
+    margin: auto;
+    padding: 2rem;
+    position: absolute;
+    top: 310%;
+    left: 50%;
+    transform: translateX(-50%) translate(-1rem, -1rem);
+    width: 60%;
+    height: 55%;
+    border: 5px solid black;
+    transition: transform 300ms ease-out;
+}
+
+.contact-card{ 
+    margin: auto;
+    width: 60%;
+    height: 75%;
+}
+
+.contact-card:hover .box-shadow1{ 
+    transform: translateX(-50%) translate(-1rem, -1rem);
+}
+
+.contact-card:hover .line-deco{ 
+    transform: translateX(-50%) translate(1rem, 1rem);
 }
