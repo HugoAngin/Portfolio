@@ -426,7 +426,7 @@ body::-webkit-scrollbar{
     position: absolute;
     left: 50%;
     transform: translateX(-50%) rotate(180deg);
-    top: 385%;
+    top: 387%;
     animation: 2s infinite scrollup;
 }
 @keyframes scrollup {
